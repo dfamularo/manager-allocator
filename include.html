@@ -1,0 +1,38 @@
+<script src="/au/support/tools/portfolio-allocator/vendor/jquery.xdomainrequest.min.js" type="text/javascript"></script>
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.4/angular.min.js" type="text/javascript"></script>
+<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+<script src="/au/support/tools/portfolio-allocator/javascripts/30e6333b.allocator.min.js"></script>
+<link href="/au/support/tools/portfolio-allocator/stylesheets/092ac1b0.screen.css" media="screen, projection" rel="stylesheet" type="text/css" />
+<link href="/au/support/tools/portfolio-allocator/stylesheets/d41d8cd9.print.css" media="print" rel="stylesheet" type="text/css" />
+<!--[if IE]>
+      <link href="/au/support/tools/portfolio-allocator/stylesheets/d41d8cd9.ie.css" media="screen, projection" rel="stylesheet" type="text/css" />
+    <![endif]-->
+<div class="grid-100">
+  <div class="content">
+    <div class="infobox">
+      <p class="disclaimer"><strong>Important information</strong><br>
+        The sample allocations are for illustrative purposes only. This tool is not intended to be a substitute for financial advice. There is no guarantee that any assumptions will be suitable for your particular circumstances. You should not make any decisions based on the information obtained using the Manager Allocation Tool without consulting an independent professional adviser.<br>
+      </p>
+    </div>
+  </div>
+</div>
+<div class="grid-container" ng-controller="NavigationCtrl" ng-class="{'loaded': loaded}">
+  <div ng-view>
+  </div>
+  <div class="grid-100 data-table nav-buttons">
+    <div class="form-button">
+      <ul class="buttons-left">
+        <li ng-hide="currentPath() == '/fund-information'"><a href="#/fund-information"><i class="btn-funds"></i>Edit fund data</a></li>
+      </ul>
+      <ul class="buttons-right">
+        <li ng-hide="currentPath() == '/total-portfolio'"><a href="" ng-click="viewTotalPortfolio()"><i  class="btn-portfolio"></i>View portfolio</a></li>
+        <li><a href="" ng-click="generateReport()"><i class="btn-pdf"></i>Generate the report</a></li>
+      </ul>
+    </div>
+  </div>
+  <br class="clr">
+  <div ng-controller="PrintCtrl">
+    <div print-dialog>
+    </div>
+  </div>
+</div>

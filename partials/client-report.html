@@ -1,0 +1,39 @@
+<div class="data-table">
+    <table cellpadding="0" cellspacing="0">
+        <thead>
+            <tr class="banner"><th colspan="7">Investment Allocation</th></tr>
+            <tr>
+                <th>Asset Class</th>
+                <th>Fund</th>
+                <th>Manager</th>
+                <th>Style</th>
+                <th colspan="2" class="r">Allocation</th>
+            </tr>
+            <tr>
+                <th>&nbsp;</th>
+                <th>&nbsp;</th>
+                <th>&nbsp;</th>
+                <th>&nbsp;</th>
+                <th class="r b">%</th>
+                <th class="r b">$</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="row in clientReport" ng-class="{total: row.assetClass == 'Total'}">
+                <td><strong>{{ row.assetClass }}</strong></td>
+                <td>{{ row.fund }}</td>
+                <td>{{ row.manager }}</td>
+                <td>{{ row.style }}</td>
+                <td class="r">{{ row.stylePctAllocated | percentage:true:2 }}</td>
+                <td class="r">${{ row.styleDollarAllocated | number:2 }}</td>
+            </tr>
+            <tr class="total">
+                <td><strong>Grand Total</strong></td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td class="r"><strong>{{ totalPctAllocated | percentage:true:2 }}</strong></td>
+                <td class="r"><strong>{{ totalDollarAllocated | number:2 }}</strong></td>
+        </tbody>
+    </table>
+</div>

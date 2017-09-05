@@ -1,0 +1,16 @@
+<div class="legend">
+  <table width="100%" cellspacing="0" cellpadding="0" border="0" ng-repeat="category in data">
+    <thead ng-show="category.name">
+      <tr>
+        <th colspan="2"><strong>{{ category.name }}</strong></th>
+      </tr>
+    </thead>
+    <tbody>
+    	<tr ng-repeat="row in category.rows | filter:isNumeric">
+      	<td><div class="legend-dot" ng-style="{backgroundColor: row.color}"> </div></td>
+      	<td>{{ row.label }}</td>
+      	<td align="right" class="legend-value">${{ row.dollarValue | number:2 }} ({{ row.value | percentage:true:2 }})</td>
+    	</tr>
+    </tbody>
+  </table>
+</div>

@@ -1,0 +1,23 @@
+<div class="risk-profile">
+    <h4>Asset Classes</h4>
+    <div class="data-table grid-100">
+    <table class="asset-allocation">
+        <thead>
+            <tr>
+                <th width="70%">Asset Class Allocation</th>
+                <th width="10%">Actual</th>
+                <th width="10%">Target</th>
+                <th width="10%">Difference</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="allocation in allocations">
+                <td>{{ allocation.sector }}</td>
+                <td class="value"><span>{{ allocation.actual | percentage:true:2 }}</span></td>
+                <td class="value"><span>{{ allocation.target | percentage:true:2:'n/a' }}</span></td>
+                <td class="value"><span><span ng-show="allocation.delta > 0">+</span>{{ allocation.delta | percentage:true:2:'n/a' }}</span></td>
+            </tr>
+        </tbody>
+    </table>
+    </div>
+</div>

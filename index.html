@@ -1,0 +1,57 @@
+<!doctype html>
+<html>
+<head>
+    <title>Russell Portfolio Allocator</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- Russell Template -->
+    <link rel="stylesheet" type="text/css" href="/au/assets/stylesheets/styles.css"/>
+    <!--[if lt IE 9]>
+      <script src="/au/assets/javascripts/html5.js"></script>
+    <![endif]-->
+    <!--[if (gt IE 8) | (IEMobile)]><!-->
+    <link rel="stylesheet" href="/au/assets/stylesheets/unsemantic-grid-responsive.css" />
+    <!--<![endif]-->
+    <link rel="stylesheet" type="text/css" href="/au/assets/stylesheets/filtertable.css" />
+    <link rel="stylesheet" type="text/css" href="/au/assets/stylesheets/old-styles.css"/>
+    <!--[if lt IE 10]>
+    <link rel="stylesheet" href="/au/assets/stylesheets/ie-styles.css" />
+    <![endif]-->
+    <!--[if (lt IE 9) & (!IEMobile)]>
+    <link rel="stylesheet" href="/au/assets/stylesheets/ie.css" />
+    <link rel="stylesheet" href="/au/assets/stylesheets/lt-ie9-styles.css" />
+    <![endif]-->
+    <!-- End Russell Template -->
+
+    <script src="vendor/jquery-1.9.1.min.js" type="text/javascript"></script>
+    <script src="vendor/jquery.xdomainrequest.min.js" type="text/javascript"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.4/angular.min.js" type="text/javascript"></script>
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script src="javascripts/30e6333b.allocator.min.js"></script>
+
+    <link href="stylesheets/092ac1b0.screen.css" media="screen, projection" rel="stylesheet" type="text/css" />
+    <link href="stylesheets/d41d8cd9.print.css" media="print" rel="stylesheet" type="text/css" />
+    <!--[if IE]>
+      <link href="stylesheets/d41d8cd9.ie.css" media="screen, projection" rel="stylesheet" type="text/css" />
+    <![endif]-->
+</head>
+<body>
+    <div class="grid-container" ng-controller="NavigationCtrl" ng-class="{'loaded': loaded}">
+        <div ng-view></div>
+        <div class="grid-100 data-table nav-buttons">
+            <div class="form-button">
+            <ul class="buttons-left">
+                <li ng-hide="currentPath() == '/fund-information'"><a href="#/fund-information"><i class="btn-funds"></i>Edit fund data</a></li>
+            </ul>
+            <ul class="buttons-right">
+                <li ng-hide="currentPath() == '/total-portfolio'"><a href="" ng-click="viewTotalPortfolio()"><i  class="btn-portfolio"></i>View portfolio</a></li>
+                <li><a href="" ng-click="generateReport()"><i class="btn-pdf"></i>Generate the report</a></li>
+            </ul>
+            </div>
+        </div>
+        <br class="clr">
+        <div ng-controller="PrintCtrl">
+            <div print-dialog></div>
+        </div>
+    </div>
+</body>
+</html>

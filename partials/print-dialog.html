@@ -1,0 +1,55 @@
+<div class="modal"></div>
+<form class="dialog data-table">
+	<a href="" ng-click="dialogClose()" class="close">X</a>
+	<h2><span>Russell</span> fund modeller report</h2>
+	<!--<p>State: {{ printState }}</p>-->
+	<div ng-show="printState == 'dialog'">
+		<fieldset>
+			<legend>Adviser Details<br>(optional)</legend>
+			<div class="fields">
+				<div class="field-group">
+					<input type="text" ng-model="adviser.name" id="adviserName" />
+					<label for="adviserName">Adviser name</label>
+				</div>
+				<div class="field-group">
+					<input type="text" ng-model="adviser.phoneNumber" id="phoneNumber" />
+					<label for="phoneNumber">Phone number</label>
+				</div>
+				<div class="field-group">
+					<input type="text" ng-model="adviser.businessName" id="businessName" />
+					<label for="businessName">Business name</label>
+				</div>
+				<div class="field-group">
+					<input type="text" ng-model="adviser.emailAddress" id="emailAddress" />
+					<label for="emailAddress">Email address</label>
+				</div>
+				<div class="field-group">
+					<input type="text" ng-model="adviser.afslNumber" id="afslNumber" />
+					<label for="afslNumber">AFSL number</label>
+				</div>
+				<div class="field-group upload-logo">
+
+					<div ng-hide="adviser.logo">
+						<a href="" class="button small" ng-click="selectFile()">Select file</a>
+						<input type="file" id="logo-file" />
+						<p class="field-note">Company logo (JPG or PNG)</p>
+					</div>
+					<div ng-show="adviser.logo"><img ng-src="{{adviser.logo}}" height="37" class="logo-preview" /> <a href="" ng-click="removeLogo()" class="logo-delete">Delete</a></div>
+				</div>
+			</div>
+		</fieldset>
+		<fieldset>
+			<legend>Include the</legend>
+			<div class="fields">
+				<label class="checkbox" ng-repeat="component in components"><input type="checkbox" ng-model="component.checked" value="{{ component.id }}" ng-checked="component.checked" ng-disabled="component.disabled" class="checkbox" /> {{ component.label }}</label>
+			</div>
+		</fieldset>
+		<div class="buttons">
+			<a href="" ng-click="generatePdf($event)" class="button">Generate PDF</a>
+		</div>
+	</div>
+	<div class="message" ng-hide="printState == 'dialog'">
+		<p class="" ng-show="printState == 'generating'">Please wait while your report is generated... <span class="spinner"></span></p>
+		<p class="ready" ng-show="printState == 'ready'">Your report is ready, <a href="{{ pdfURL }}" download="report.pdf">download PDF</a>.</p>
+	</div>
+</form>

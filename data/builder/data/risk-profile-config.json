@@ -1,0 +1,22 @@
+[
+    {
+        "name": "Conservative Risk Profile",
+        "modelFund": "RUSSTAB"
+    },
+    {
+        "name": "Moderate Risk Profile",
+        "modelFund": "RUSDIV50"
+    },
+    {
+        "name": "Balanced Risk Profile",
+        "modelFund": "RUSBAL"
+    },
+    {
+        "name": "Growth Risk Profile",
+        "modelFund": "RUSGROWTH"
+    },
+    {
+        "name": "High Growth Risk Profile",
+        "modelFund": "RUSHGRA"
+    }
+]

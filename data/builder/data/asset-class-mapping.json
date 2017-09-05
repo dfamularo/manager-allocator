@@ -1,0 +1,70 @@
+[
+{
+    "name": "Equity",
+    "color": "#6ad",
+    "assetClasses": [
+        {
+            "name": "Australian Shares",
+            "color": "#6ad"
+        },
+        {
+            "name": "International Shares",
+            "color": "#a8bccd"
+        }
+    ],
+    "subColors": [
+        "#4faae0", "#a2cd3d", "#3a789e", "#8aaeca", "#173369", "#10224d", "#285b78", "#3d6b88", "#557e99", "#7193aa", "#b1c7d5", "#71b7e6", "#28497d", "#93c6eb", "#b3d7f1"
+    ]
+},
+{
+    "name": "Alpha Driven",
+    "color": "#4e5057",
+    "assetClasses": [
+        {
+            "name": "Alternatives",
+            "color": "#000"
+        }
+    ],
+    "subColors": [
+        "#000", "#3c3f45", "#53595f", "#73777e", "#979aa2", "#c4c7ca", "#313131"
+    ]
+},
+{
+    "name": "Real Assets",
+    "color": "#e47e35",
+    "assetClasses": [
+        {
+            "name": "Property",
+            "color": "#672826"
+        }
+    ],
+    "subColors": [
+        "#e86923", "#ba541b", "#9a5f3e", "#581d1c", "#703832", "#8d574f"
+    ]
+},
+{
+    "name": "Fixed Income",
+    "color": "#c8c9ab",
+    "assetClasses": [
+        {
+            "name": "Australian Fixed",
+            "color": "#858472"
+        },
+        {
+            "name": "Fixed Interest",
+            "color": "#c8c9ab"
+        },
+        {
+            "name": "Cash",
+            "color": "#949360"
+        },
+        {
+            "name": "Fixed Interest and Cash",
+            "color": "#c8c9ab"
+        }
+    ],
+    "subColors": [
+        "#b3bd9a", "#aaa45d", "#868771", "#6a6a31", "#84804c", "#cdccb0", "#a09a6d"
+    ]
+}
+]

@@ -1,0 +1,5 @@
+To run the tool you need to do:
+ 
+data-file-combiner path/to/json > config.json
+ 
+where path/to/json is the path of the source JSON config files (those in src/data/).

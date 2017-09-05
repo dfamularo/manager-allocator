@@ -1,0 +1,127 @@
+[
+  {
+    "FundID": "MPSBF", 
+    "enabled": false, 
+    "Name": "PartnerShip Balanced Fund - Class A"
+  }, 
+  {
+    "FundID": "MPSCF", 
+    "enabled": false, 
+    "Name": "PartnerShip Conservative Fund - Class A"
+  }, 
+  {
+    "FundID": "MPSDMF", 
+    "enabled": false, 
+    "Name": "PartnerShip Debt Management Fund - Class A"
+  }, 
+  {
+    "FundID": "MPSGF", 
+    "enabled": false, 
+    "Name": "PartnerShip Growth Fund - Class A"
+  }, 
+  {
+    "FundID": "MPSISF", 
+    "enabled": false, 
+    "Name": "PartnerShip Income Seeker Fund - Class A"
+  }, 
+  {
+    "FundID": "RUSBAL", 
+    "enabled": true,   
+    "Name": "Russell Balanced Fund - Class A"
+  }, 
+  {
+    "FundID": "RUSSTAB", 
+    "enabled": true, 
+    "Name": "Russell Conservative Fund - Class A"
+  }, 
+  {
+    "FundID": "RUSDIV50", 
+    "enabled": true, 
+    "Name": "Russell Diversified 50 Fund - Class A"
+  },  
+  {
+    "FundID": "RUSGROWTH", 
+    "enabled": true, 
+    "Name": "Russell Growth Fund - Class A"
+  }, 
+  {
+    "FundID": "RUSHGRA", 
+    "enabled": true, 
+    "Name": "Russell High Growth Fund - Class A"
+  }, 
+  {
+    "FundID": "FIIP", 
+    "enabled": true, 
+    "Name": "Russell II Portfolio - Class A"
+  }, 
+  {
+    "FundID": "FIVP", 
+    "enabled": true, 
+    "Name": "Russell IV Portfolio - Class A"
+  },
+  {
+    "FundID": "FVIP", 
+    "enabled": true, 
+    "Name": "Russell V Portfolio - Class A"
+  }, 
+  {
+    "FundID": "RABIF", 
+    "enabled": true, 
+    "Name": "Russell Australian Bond Income Fund - Class A"
+  }, 
+  {
+    "FundID": "RACEF", 
+    "enabled": true, 
+    "Name": "Russell Australian Cash Enhanced Fund - Class A"
+  },
+  {
+    "FundID": "RACF", 
+    "enabled": true, 
+    "Name": "Russell Australian Cash Fund - Class A"
+  },
+  {
+    "FundID": "RASAGF", 
+    "enabled": true, 
+    "Name": "Russell Australian Opportunities Fund - Class A"
+  }, 
+  {
+    "FundID": "RASF", 
+    "enabled": true, 
+    "Name": "Russell Australian Shares Fund - Class A"
+  }, 
+  {
+    "FundID": "REMFA", 
+    "enabled": true, 
+    "Name": "Russell Emerging Markets Fund - Class A"
+  }, 
+  {
+    "FundID": "RGLIFHA", 
+    "enabled": true, 
+    "Name": "Russell Global Listed Infrastructure Fund - $A Hedged - Class A"
+  },
+  {
+    "FundID": "RISAGF", 
+    "enabled": true, 
+    "Name": "Russell Global Opportunities Fund - Class A"
+  }, 
+  {
+    "FundID": "RGOFHA", 
+    "enabled": true, 
+    "Name": "Russell Global Opportunities Fund - $A Hedged - Class A"
+  }, 
+  {
+    "FundID": "RIPSF", 
+    "enabled": true, 
+    "Name": "Russell International Property Securities Fund - $A Hedged - Class A"
+  }, 
+  {
+    "FundID": "RISF", 
+    "enabled": true, 
+    "Name": "Russell International Shares Fund - Class A"
+  }, 
+  {
+    "FundID": "RISH", 
+    "enabled": true, 
+    "Name": "Russell International Shares Fund - $A Hedged - Class A"
+  }
+]

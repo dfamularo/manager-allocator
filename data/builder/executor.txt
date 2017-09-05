@@ -1,0 +1,1 @@
+data-file-combiner data > data/config.json

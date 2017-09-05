@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>DocRaptor Test</title>
+	<script src="//code.jquery.com/jquery-1.10.2.min.js"></script>
+	<script type="text/javascript">
+	var data = { doc: {
+           test: true,
+           document_type: 'pdf',
+           document_content: "<p>Foo</p>",
+           name: "test.pdf",
+           async: true
+       }};
+	var cb = function (data, status) {
+		var statusId = data.status_id;
+	    $("#out").html(statusId);
+	    var checkTimer = setInterval(function () {
+	    	$.get('http://docraptor.com/status/' + statusId + "?user_credentials=KRBZT5dNqbJTDS9wsh1").done(function (data) {
+	    		if (data.status === "completed") {
+	    			$("#out").html("<a href='" + data.download_url + "'>Download</a>");
+	    			clearInterval(checkTimer);
+	    		}
+	    	});
+	    }, 1000);
+	};
+	$.post('http://docraptor.com/docs/?user_credentials=KRBZT5dNqbJTDS9wsh1', data, cb);
+    </script>
+</head>
+<body>
+	<h1>Test</h1>
+	<div id="out">output</div>
+</body>
+</html>
