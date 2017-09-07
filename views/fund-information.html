@@ -1,0 +1,88 @@
+<div ng-controller="FundInformationCtrl">
+  <div class="grid-100">
+    <div class="content"> <span class="steps">Step 1</span>
+      <h1>Add fund information</h1>
+    </div>
+  </div>
+
+  <div class="grid-33">
+    <div class="tile investor-details-tile">
+      <div>
+        <h4>Investor Details</h4>
+        <form ng-controller="InvestorDetailsCtrl" name="investorDetails" novalidate>
+          <input name="investorName" type="text" id="investorName" ng-model="investor.name" />
+          <label for="investorName" class="bottom">Investor name</label>
+          <select name="riskProfile" ng-model="riskProfile" ng-options="profile as profile.name for profile in data.riskProfiles">
+          </select>
+          <label for="riskprofile" class="bottom">Target risk profile</label>
+          <input name="investmentAmount" type="number" id="investmentAmount" ng-model="investor.amount" placeholder="$" min="0" ng-required />
+          <label for="investmentAmount" class="bottom">Total investment amount
+            <span class="error-message" ng-show="investorDetails.investmentAmount.$error.min">Must be greater than 0</span>
+            <span class="error-message" ng-show="investorDetails.investmentAmount.$error.required">Required</span>
+          </label>
+          <fieldset class="radio-group">
+            <label for="allocate-percentage"><input id="allocate-percentage"  type="radio" name="allocationType" ng-model="investor.allocationType" value="percentage"> Allocate as a %</label>
+            <label for="allocate-dollars"><input id="allocate-dollars" type="radio" name="allocationType" ng-model="investor.allocationType" value="dollars"> Allocate as $</label>
+          </fieldset>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <div class="grid-66 tile investor-details-tile" ng-controller="RiskReturnCtrl">
+    <div allocator-asset-classes id="asset-classes"><p>Asset Classes</p></div>
+  </div>
+
+
+  <div ng-controller="AssetAllocationCtrl">
+    <div class="grid-100">
+      <div class="alert" ng-hide="hideAlert || investor.valid()"><p>Please ensure all funds are selected, you have entered an investment amount and your portfolio allocation totals 100%</p></div>
+    </div>
+    <div class="data-table grid-100">
+      <table width="100%" border="0" cellpadding="0" cellspacing="0" class="fund-picker dark-table">
+        <thead>
+          <tr>
+            <th width="40%" scope="col">Fund Name</th>
+            <th width="18%" scope="col">Asset Class</th>
+            <th width="13%" scope="col">% Allocation</th>
+            <th width="13%" scope="col">$ Allocation</th>
+            <th width="6%" scope="col">Delete</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr ng-hide="investor.funds.length > 0"><td colspan="5">Select a fund type to add</td></tr>
+          <tr ng-repeat="allocation in investor.funds" ng-class-even="'even'" ng-class-odd="'odd'" class="fund-row fund-row-{{ $index }}">
+            <td ng-show="allocation.type == 'russell'">
+              <select name="fundName_{{ $index }}" ng-model="allocation.fund" ng-options="fund.name for fund in funds" ng-change="updateFundAllocations()">
+                 <option></option>
+              </select>
+            </td>
+            <td ng-show="allocation.type == 'russell'">{{ allocation.fund.assetClass }}</td>
+            <td ng-show="allocation.type == 'other'"><input name="fundName_{{ $index }}" ng-model="allocation.fundName" class="other-fund-name" /></td>
+            <td ng-show="allocation.type == 'other'"><select name="assetClass_{{ $index }}" ng-model="allocation.assetClass" ng-options="assetClass for assetClass in assetClasses"></select></td>
+            <td ng-show="investor.allocationType == 'percentage'"><input name="allocationPercent_{{ $index }}" type="number" ng-model="allocation.percentage" ng-change="updateFundAllocations()" step="0.01" /></td>
+            <td ng-show="investor.allocationType == 'percentage'">${{ allocation.dollars | number:2 }}</td>
+            <td ng-show="investor.allocationType == 'dollars'">{{ allocation.percentage | percentage:false:2 }}</td>
+            <td ng-show="investor.allocationType == 'dollars'"><input name="allocationDollars_{{ $index }}" type="number" ng-model="allocation.dollars" ng-change="updateFundAllocations()" /></td>
+            <td><a href="" ng-click="deleteFund($index)">Delete</a></td>
+          </tr>
+          <tr class="last">
+            <td colspan="5">
+
+              <ul class="action-buttons">
+                <li class="btn-add"><a href="" ng-click="addRussellFund()" class="btn-add-russell">Add a Russell Fund</a></li>
+                <li class="btn-add"><a href="" ng-click="addOtherFund()" class="btn-add-other">Add a non Russell Fund</a></li>
+              </ul>
+            </td>
+          </tr>
+          <tr class="last">
+            <td colspan="2">Total Allocation</td>
+            <td ng-class="{invalid: investor.totalAllocationPercentage != 100}">{{ investor.totalAllocationPercentage | percentage:false:2 }}</td>
+            <td>${{ investor.totalAllocationDollars | number:2 }}</td>
+            <td>&nbsp;</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  <div>
+
